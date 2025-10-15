@@ -5,9 +5,9 @@
 
 <img alt="ddg-mcp" src="https://img.shields.io/badge/DuckDuckGo-Search-DE5833?style=for-the-badge&logo=duckduckgo&logoColor=white" width="400">
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/mekayelanik/ddg-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/ddg-mcp)
-[![Docker Stars](https://img.shields.io/docker/stars/mekayelanik/ddg-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/ddg-mcp)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/mekayelanik/duckduckgo-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)
+[![Docker Stars](https://img.shields.io/docker/stars/mekayelanik/duckduckgo-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)
+[![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE)
 
 **[NPM Package](https://www.npmjs.com/package/@oevortex/ddg_search)** • **[GitHub Repository](https://github.com/OEvortex/ddg_search)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/ddg-mcp)** • **[Docker Image Github Repository](https://github.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE)**
 
@@ -760,7 +760,7 @@ We welcome contributions! Here's how you can help:
 
 ## License
 
-This Docker image is provided under the GPLv3.0. See [LICENSE](https://github.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE) file for details.
+This Docker image is provided under the GPLv3.0. See [LICENSE](https://raw.githubusercontent.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE) file for details.
 
 The ddg_search MCP NPM package ([@oevortex/ddg_search](https://www.npmjs.com/package/@oevortex/ddg_search)) is licensed under Apache License 2.0.
 
