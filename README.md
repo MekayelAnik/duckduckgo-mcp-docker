@@ -3,13 +3,13 @@
 
 <div align="left">
 
-<img alt="ddg-mcp" src="https://img.shields.io/badge/DuckDuckGo-Search-DE5833?style=for-the-badge&logo=duckduckgo&logoColor=white" width="400">
+<img alt="duckduckgo-mcp" src="https://img.shields.io/badge/DuckDuckGo-MCP-DE5833?style=for-the-badge&logo=duckduckgo&logoColor=white" width="400">
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/mekayelanik/duckduckgo-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)
 [![Docker Stars](https://img.shields.io/docker/stars/mekayelanik/duckduckgo-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE)
 
-**[NPM Package](https://www.npmjs.com/package/@oevortex/ddg_search)** • **[GitHub Repository](https://github.com/OEvortex/ddg_search)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/ddg-mcp)** • **[Docker Image Github Repository](https://github.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE)**
+**[NPM Package](https://www.npmjs.com/package/@oevortex/ddg_search)** • **[GitHub Repository](https://github.com/OEvortex/ddg_search)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)** • **[Docker Image Github Repository](https://github.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE)**
 
 </div>
 
@@ -80,16 +80,16 @@ Choose the right tag for your deployment:
 
 ```bash
 # Production deployment (recommended)
-mekayelanik/ddg-mcp:stable
+mekayelanik/duckduckgo-mcp:stable
 
 # Latest stable features
-mekayelanik/ddg-mcp:latest
+mekayelanik/duckduckgo-mcp:latest
 
 # Pin to specific version
-mekayelanik/ddg-mcp:1.1.3
+mekayelanik/duckduckgo-mcp:1.1.3
 
 # Testing beta features (use with caution)
-mekayelanik/ddg-mcp:beta
+mekayelanik/duckduckgo-mcp:beta
 ```
 
 ---
@@ -102,9 +102,9 @@ Create a `docker-compose.yml` file:
 
 ```yaml
 services:
-  ddg-mcp:
-    image: mekayelanik/ddg-mcp:stable
-    container_name: ddg-mcp
+  duckduckgo-mcp:
+    image: mekayelanik/duckduckgo-mcp:stable
+    container_name: duckduckgo-mcp
     restart: unless-stopped
     ports:
       - "8020:8020"
@@ -115,7 +115,7 @@ services:
       - TZ=Asia/Dhaka
       - PROTOCOL=SHTTP
       - CORS=*
-    hostname: ddg-mcp
+    hostname: duckduckgo-mcp
     domainname: local
 ```
 
@@ -126,7 +126,7 @@ services:
 docker compose up -d
 
 # View logs
-docker compose logs -f ddg-mcp
+docker compose logs -f duckduckgo-mcp
 
 # Check status
 docker compose ps
@@ -138,7 +138,7 @@ For quick testing or simple deployments:
 
 ```bash
 docker run -d \
-  --name=ddg-mcp \
+  --name=duckduckgo-mcp \
   --restart=unless-stopped \
   -p 8020:8020 \
   -e PORT=8020 \
@@ -147,7 +147,7 @@ docker run -d \
   -e TZ=Asia/Dhaka \
   -e PROTOCOL=SHTTP \
   -e CORS=* \
-  mekayelanik/ddg-mcp:stable
+  mekayelanik/duckduckgo-mcp:stable
 ```
 
 ### Access the Server
@@ -273,7 +273,7 @@ When debug mode is enabled:
 
 ```bash
 # Access debug container
-docker exec -it ddg-mcp sh
+docker exec -it duckduckgo-mcp sh
 ```
 
 ---
@@ -521,9 +521,9 @@ Default networking mode for simple, isolated deployments:
 
 ```yaml
 services:
-  ddg-mcp:
-    image: mekayelanik/ddg-mcp:stable
-    container_name: ddg-mcp
+  duckduckgo-mcp:
+    image: mekayelanik/duckduckgo-mcp:stable
+    container_name: duckduckgo-mcp
     restart: unless-stopped
     ports:
       - "8020:8020"
@@ -544,8 +544,8 @@ Use the host's network stack directly for maximum performance:
 
 ```yaml
 services:
-  ddg-mcp:
-    image: mekayelanik/ddg-mcp:stable
+  duckduckgo-mcp:
+    image: mekayelanik/duckduckgo-mcp:stable
     network_mode: host
     environment:
       - PORT=8020
@@ -564,8 +564,8 @@ For dedicated IP addresses on your LAN:
 
 ```yaml
 services:
-  ddg-mcp:
-    image: mekayelanik/ddg-mcp:stable
+  duckduckgo-mcp:
+    image: mekayelanik/duckduckgo-mcp:stable
     mac_address: "AB:BC:CD:DE:EF:02"
     networks:
       macvlan-net:
@@ -605,19 +605,19 @@ docker image prune -f
 
 ```bash
 # Pull the latest image
-docker pull mekayelanik/ddg-mcp:stable
+docker pull mekayelanik/duckduckgo-mcp:stable
 
 # Stop and remove the old container
-docker stop ddg-mcp
-docker rm ddg-mcp
+docker stop duckduckgo-mcp
+docker rm duckduckgo-mcp
 
 # Start new container (use your original docker run command)
 docker run -d \
-  --name=ddg-mcp \
+  --name=duckduckgo-mcp \
   --restart=unless-stopped \
   -p 8020:8020 \
   -e PORT=8020 \
-  mekayelanik/ddg-mcp:stable
+  mekayelanik/duckduckgo-mcp:stable
 
 # Clean up old images
 docker image prune -f
@@ -649,10 +649,10 @@ docker --version  # Should be 23.0+
 sudo lsof -i :8020
 
 # Check container logs
-docker logs ddg-mcp
+docker logs duckduckgo-mcp
 
 # Verify image integrity
-docker pull mekayelanik/ddg-mcp:stable
+docker pull mekayelanik/duckduckgo-mcp:stable
 ```
 
 #### Permission Denied Errors
@@ -680,7 +680,7 @@ curl http://localhost:8020/healthz
 sudo ufw status
 
 # Verify container networking
-docker inspect ddg-mcp | grep IPAddress
+docker inspect duckduckgo-mcp | grep IPAddress
 ```
 
 #### CORS Errors
@@ -699,16 +699,16 @@ environment:
 
 ```bash
 # Check internet access
-docker exec ddg-mcp ping -c 3 8.8.8.8
+docker exec duckduckgo-mcp ping -c 3 8.8.8.8
 
 # Check DNS resolution
-docker exec ddg-mcp nslookup duckduckgo.com
+docker exec duckduckgo-mcp nslookup duckduckgo.com
 
 # Review logs
-docker logs ddg-mcp --tail 50
+docker logs duckduckgo-mcp --tail 50
 
 # Restart container
-docker restart ddg-mcp
+docker restart duckduckgo-mcp
 ```
 
 ---
@@ -738,8 +738,8 @@ docker restart ddg-mcp
 #### Docker Image Issues
 
 For issues specific to this Docker image:
-- **GitHub Issues:** [ddg-mcp-docker/issues](https://github.com/MekayelAnik/ddg-mcp/issues)
-- **Discussions:** [ddg-mcp-docker/discussions](https://github.com/MekayelAnik/ddg-mcp/discussions)
+- **GitHub Issues:** [duckduckgo-mcp-docker/issues](https://github.com/MekayelAnik/duckduckgo-mcp-docker/issues)
+- **Discussions:** [duckduckgo-mcp-docker/discussions](https://github.com/MekayelAnik/duckduckgo-mcp-docker/discussions)
 
 #### Package Issues
 
