@@ -1,15 +1,15 @@
 # DuckDuckGo Search MCP Server
-### Multi-Architecture Docker Image for Distributed Deployment
+### Multi-Architecture Docker Image for Privacy-First Web Search
 
 <div align="left">
 
-<img alt="duckduckgo-mcp" src="https://img.shields.io/badge/DuckDuckGo-MCP-DE5833?style=for-the-badge&logo=duckduckgo&logoColor=white" width="400">
+<img alt="duckduckgo-mcp" src="https://img.shields.io/badge/DuckDuckGo-MCP-00E9A3?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiA3TDEyIDEyTDIyIDdMMTIgMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yIDEyTDEyIDE3TDIyIDEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMiAxN0wxMiAyMkwyMiAxNyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+&logoColor=white" width="400">
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/mekayelanik/duckduckgo-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)
 [![Docker Stars](https://img.shields.io/docker/stars/mekayelanik/duckduckgo-mcp.svg?style=flat-square)](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)
 [![License](https://img.shields.io/badge/license-GPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE)
 
-**[NPM Package](https://www.npmjs.com/package/@oevortex/ddg_search)** • **[GitHub Repository](https://github.com/OEvortex/ddg_search)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)** • **[Docker Image Github Repository](https://github.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE)**
+**[Official Website](https://duckduckgo.com/)** • **[Documentation](https://github.com/oevortex/ddg_search)** • **[Docker Hub](https://hub.docker.com/r/mekayelanik/duckduckgo-mcp)**
 
 </div>
 
@@ -23,82 +23,72 @@
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
 - [MCP Client Configuration](#mcp-client-configuration)
-- [Available Tools](#available-tools)
 - [Network Configuration](#network-configuration)
 - [Updating](#updating)
 - [Troubleshooting](#troubleshooting)
 - [Additional Resources](#additional-resources)
-- [Support & Contributing](#support--contributing)
-- [License](#license)
+- [Support & License](#support--license)
+- [Major Changes](#major-changes)
 
 ---
 
+## 😎 Buy Me a Coffee ☕︎
+**Your support encourages me to keep creating/supporting my open-source projects.** If you found value in this project, you can buy me a coffee to keep me inspired.
+
+<p align="center">
+<a href="https://07mekayel07.gumroad.com/coffee" target="_blank">
+<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60">
+</a>
+</p>
+
 ## Overview
 
-DuckDuckGo Search MCP Server is a privacy-focused, lightweight Model Context Protocol server that provides web search capabilities without requiring API keys. Built on Alpine Linux for a minimal footprint and maximum security, it offers real web scraping capabilities for comprehensive search results. This can be used with AI IDEs (VS Code, Claude CLI, Codex, Cursor, etc.), AI clients (Ollama, LM Studio, VLLM, etc.), or directly in RAG applications.
+DuckDuckGo Search MCP Server provides privacy-first web search capabilities through the Model Context Protocol via DuckDuckGo. Built on Alpine Linux for minimal footprint and maximum security.
 
 ### Key Features
 
-✨ **No API Keys Required** - Works out of the box with zero configuration  
-🌐 **Multi-Source Search** - DuckDuckGo web search and Felo AI integration  
-🔍 **Advanced Content Extraction** - Smart URL fetching with customizable filtering  
-📊 **Metadata Extraction** - Retrieve titles, descriptions, and images from URLs  
+✨ **Multi-Architecture Support** - Native support for x86-64 and ARM64  
 🚀 **Multiple Transport Protocols** - HTTP, SSE, and WebSocket support  
-🔒 **Privacy-First Design** - No tracking, no data collection  
-⚡ **Performance Optimized** - Built-in caching and rate limiting  
+🔒 **Secure by Design** - Alpine-based with minimal attack surface  
+⚡ **High Performance** - ZSTD compression for faster deployments  
 🎯 **Production Ready** - Stable releases with comprehensive testing  
-🔧 **Easy Configuration** - Simple environment variable setup  
-🛡️ **Security Features** - Rotating user agents and request filtering
+🔧 **Easy Configuration** - Simple environment variable setup
 
 ---
 
 ## Supported Architectures
 
-DuckDuckGo Search MCP Server supports multiple architectures through Docker's multi-arch capabilities:
+| Architecture | Tag Prefix | Status |
+|:-------------|:-----------|:------:|
+| **x86-64** | `amd64-<version>` | ✅ Stable |
+| **ARM64** | `arm64v8-<version>` | ✅ Stable |
 
-| Architecture | Tag Prefix | Status | Notes |
-|:-------------|:-----------|:------:|:------|
-| **x86-64** | `amd64-<version>` | ✅ Stable | Fully tested on Intel/AMD processors |
-| **ARM64** | `arm64v8-<version>` | ✅ Stable | Optimized for Raspberry Pi, Apple Silicon |
-
-> 💡 **Note:** Multi-arch images automatically select the correct architecture for your system.
+> 💡 Multi-arch images automatically select the correct architecture for your system.
 
 ---
 
 ## Available Tags
 
-Choose the right tag for your deployment:
-
 | Tag | Stability | Description | Use Case |
 |:----|:---------:|:------------|:---------|
 | `stable` | ⭐⭐⭐ | Most stable release | **Recommended for production** |
 | `latest` | ⭐⭐⭐ | Latest stable release | Stay current with stable features |
-| `1.x.x` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
-| `beta` | ⚠️ | Beta releases | **Testing only - not for production** |
+| `1.0.21` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
+| `beta` | ⚠️ | Beta releases | **Testing only** |
 
-### Version Tagging Strategy
+### System Requirements
 
-```bash
-# Production deployment (recommended)
-mekayelanik/duckduckgo-mcp:stable
+- **Docker Engine:** 23.0+
+- **RAM:** Minimum 512MB
+- **CPU:** Single core sufficient
 
-# Latest stable features
-mekayelanik/duckduckgo-mcp:latest
-
-# Pin to specific version
-mekayelanik/duckduckgo-mcp:1.1.3
-
-# Testing beta features (use with caution)
-mekayelanik/duckduckgo-mcp:beta
-```
+> 🔒 **CRITICAL:** Do NOT expose this container directly to the internet without proper security measures (reverse proxy, SSL/TLS, authentication, firewall rules).
 
 ---
 
 ## Quick Start
 
 ### Docker Compose (Recommended)
-
-Create a `docker-compose.yml` file:
 
 ```yaml
 services:
@@ -110,31 +100,27 @@ services:
       - "8020:8020"
     environment:
       - PORT=8020
+      - INTERNAL_PORT=38021
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Dhaka
-      - PROTOCOL=SHTTP
-      - CORS=*
+      - NODE_ENV=production
+      - PROTOCOL=HTTP
+      - ENABLE_HTTPS=false
+      - HTTP_VERSION_MODE=auto
+      # Optional: require Bearer token auth at HAProxy layer
+      # - API_KEY=replace-with-strong-secret
     hostname: duckduckgo-mcp
     domainname: local
 ```
 
-**Deploy the container:**
-
+**Deploy:**
 ```bash
-# Start the service
 docker compose up -d
-
-# View logs
 docker compose logs -f duckduckgo-mcp
-
-# Check status
-docker compose ps
 ```
 
 ### Docker CLI
-
-For quick testing or simple deployments:
 
 ```bash
 docker run -d \
@@ -142,41 +128,36 @@ docker run -d \
   --restart=unless-stopped \
   -p 8020:8020 \
   -e PORT=8020 \
+  -e INTERNAL_PORT=38021 \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Asia/Dhaka \
-  -e PROTOCOL=SHTTP \
-  -e CORS=* \
+  -e NODE_ENV=production \
+  -e PROTOCOL=HTTP \
+  -e ENABLE_HTTPS=false \
+  -e HTTP_VERSION_MODE=auto \
   mekayelanik/duckduckgo-mcp:stable
 ```
 
-### Access the Server
-
-After deployment, the server provides multiple endpoints:
+### Access Endpoints
 
 | Protocol | Endpoint | Use Case |
 |:---------|:---------|:---------|
-| **HTTP (Streamable)** | `http://host-ip:8020/mcp` | Best compatibility, recommended |
-| **SSE** | `http://host-ip:8020/sse` | Real-time streaming responses |
+| **HTTP** | `http://host-ip:8020/mcp` | Best compatibility (recommended) |
+| **SSE** | `http://host-ip:8020/sse` | Real-time streaming |
 | **WebSocket** | `ws://host-ip:8020/message` | Bidirectional communication |
-| **Health Check** | `http://host-ip:8020/healthz` | Service health monitoring |
 
-> ⏱️ **ARM Devices:** Allow 30-60 seconds for initialization on Raspberry Pi and similar devices before accessing endpoints.
+When HTTPS is enabled (`ENABLE_HTTPS=true`), use TLS endpoints:
 
-### Health Check
+| Protocol | Endpoint |
+|:---------|:---------|
+| **SHTTP** | `https://host-ip:8020/mcp` |
+| **SSE** | `https://host-ip:8020/sse` |
+| **WebSocket** | `wss://host-ip:8020/message` |
 
-Verify the server is running:
-
-```bash
-# Health check endpoint
-curl http://localhost:8020/healthz
-
-# Test MCP endpoint
-curl http://localhost:8020/mcp
-
-# Detailed response
-curl -v http://localhost:8020/mcp
-```
+> ⚠️ **Security Warning:** The container now defaults to HTTP (`ENABLE_HTTPS=false`) for easier local setup. Use `ENABLE_HTTPS=true` for production, public networks, or any untrusted environment.
+>
+> ⏱️ **ARM Devices:** Allow 30-60 seconds for initialization before accessing endpoints.
 
 ---
 
@@ -184,103 +165,63 @@ curl -v http://localhost:8020/mcp
 
 ### Environment Variables
 
-Customize your deployment with these environment variables:
+| Variable | Default | Description |
+|:---------|:-------:|:------------|
+| `PORT` | `8020` | Internal server port |
+| `INTERNAL_PORT` | `38021` | Internal MCP server port used by supergateway |
+| `PUID` | `1000` | User ID for file permissions |
+| `PGID` | `1000` | Group ID for file permissions |
+| `TZ` | `Asia/Dhaka` | Container timezone ([TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)) |
+| `NODE_ENV` | `production` | Node.js environment |
+| `PROTOCOL` | `SHTTP` | Default transport protocol |
+| `API_KEY` | *(empty)* | Enables Bearer token auth (`Authorization: Bearer <API_KEY>`) |
+| `CORS` | *(empty)* | Comma-separated CORS origins, supports `*` |
+| `ENABLE_HTTPS` | `false` | Enables TLS termination in HAProxy |
+| `TLS_CERT_PATH` | `/etc/haproxy/certs/server.crt` | TLS cert path |
+| `TLS_KEY_PATH` | `/etc/haproxy/certs/server.key` | TLS private key path |
+| `TLS_PEM_PATH` | `/etc/haproxy/certs/server.pem` | Combined PEM file used by HAProxy |
+| `TLS_CN` | `localhost` | CN for auto-generated certificate |
+| `TLS_SAN` | `DNS:<TLS_CN>` | SAN for auto-generated certificate |
+| `TLS_DAYS` | `365` | Auto-generated cert validity period |
+| `TLS_MIN_VERSION` | `TLSv1.3` | Minimum TLS protocol (`TLSv1.2` or `TLSv1.3`) |
+| `HTTP_VERSION_MODE` | `auto` | `auto`, `all`, `h1`, `h2`, `h3`, `h1+h2` |
+| `DEBUG_MODE` | *(empty)* | Enables debug hold mode when set truthy |
 
-| Variable | Default | Options | Description |
-|:---------|:-------:|:--------|:------------|
-| `PORT` | `8020` | Any valid port (1-65535) | Internal server port |
-| `PUID` | `1000` | Any valid UID | User ID for file permissions |
-| `PGID` | `1000` | Any valid GID | Group ID for file permissions |
-| `TZ` | `Asia/Dhaka` | [TZ database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) | Container timezone |
-| `PROTOCOL` | `SHTTP` | `SHTTP`, `SSE`, `WS` | Default transport protocol |
-| `CORS` | _(none)_ | Domain(s), `*`, or regex | Cross-Origin Resource Sharing config |
-| `DEBUG_MODE` | `false` | `true`, `false`, `1`, `0` | Enable debug mode with nano editor |
+### HTTPS and HTTP Version Notes
 
-### User & Group Identifiers
+- If `ENABLE_HTTPS=true` and cert files are missing, the container auto-generates a self-signed certificate.
+- If `TLS_CERT_PATH` and `TLS_KEY_PATH` exist, they are merged into `TLS_PEM_PATH` and used directly.
+- `HTTP_VERSION_MODE=h3` (or `auto`) enables HTTP/3 only when HAProxy build includes QUIC; otherwise it safely falls back.
 
-To avoid permission issues, set `PUID` and `PGID` to match your host user:
+### API Key Authentication Notes
+
+- Set `API_KEY` to enforce authentication at reverse proxy level.
+- Expected header format: `Authorization: Bearer <API_KEY>`.
+- Localhost health checks remain accessible for liveness/readiness.
+
+### User & Group IDs
+
+Find your IDs and set them to avoid permission issues:
 
 ```bash
-# Find your user and group IDs
 id username
-
-# Example output:
-# uid=1000(dockeruser) gid=1000(dockergroup) groups=1000(dockergroup)
+# uid=1000(user) gid=1000(group)
 ```
 
-Use these values in your Docker configuration:
+### Timezone Examples
 
 ```yaml
-environment:
-  - PUID=1000  # Use your uid value
-  - PGID=1000  # Use your gid value
-```
-
-### CORS Configuration
-
-Configure Cross-Origin Resource Sharing for web access:
-
-```yaml
-# Allow all origins (development only)
-environment:
-  - CORS=*
-
-# Allow specific domains
-environment:
-  - CORS=https://example.com,https://app.example.com
-
-# Allow IP addresses
-environment:
-  - CORS=192.168.1.100,192.168.1.101
-
-# Mix domains and IPs
-environment:
-  - CORS=https://example.com,192.168.1.100:3000
-
-# Use regex patterns
-environment:
-  - CORS=/^https?:\/\/.*\.example\.com$/
-```
-
-> ⚠️ **Security Warning:** Using `CORS=*` allows all origins and should only be used in development. Always specify exact origins in production.
-
-### Timezone Configuration
-
-Set your local timezone for accurate logging:
-
-```yaml
-environment:
-  - TZ=America/New_York  # US Eastern
-  - TZ=Europe/London     # UK
-  - TZ=Asia/Tokyo        # Japan
-  - TZ=UTC               # Coordinated Universal Time
-```
-
-### Debug Mode
-
-Enable debug mode for troubleshooting:
-
-```yaml
-environment:
-  - DEBUG_MODE=true  # Enables nano editor and pauses container for inspection
-```
-
-When debug mode is enabled:
-- Container installs nano editor
-- Container pauses after initialization
-- Exec into container to investigate issues
-- Useful for debugging entrypoint or configuration problems
-
-```bash
-# Access debug container
-docker exec -it duckduckgo-mcp sh
+- TZ=Asia/Dhaka        # Bangladesh
+- TZ=America/New_York  # US Eastern
+- TZ=Europe/London     # UK
+- TZ=UTC               # Universal Time
 ```
 
 ---
 
 ## MCP Client Configuration
 
-### Transport Support Matrix
+### Transport Support
 
 | Client | HTTP | SSE | WebSocket | Recommended |
 |:-------|:----:|:---:|:---------:|:------------|
@@ -291,18 +232,18 @@ docker exec -it duckduckgo-mcp sh
 | **Codeium (Windsurf)** | ✅ | ✅ | ⚠️* | HTTP |
 | **Cursor** | ✅ | ✅ | ⚠️* | HTTP |
 
-> ⚠️ *WebSocket support is experimental and not part of the official MCP specification
+> ⚠️ *WebSocket is experimental ([Issue #1288](https://github.com/modelcontextprotocol/modelcontextprotocol/issues/1288))
 
-### VS Code (Cline/Roo-Cline Extension)
+---
 
-Configure in `.vscode/settings.json` or `~/.config/Code/User/settings.json`:
+### VS Code (Cline/Roo-Cline)
 
-#### HTTP (Recommended)
+Configure in `.vscode/settings.json`:
 
 ```json
 {
   "mcp.servers": {
-    "ddg-search": {
+    "duckduckgo": {
       "url": "http://host-ip:8020/mcp",
       "transport": "http"
     }
@@ -310,77 +251,21 @@ Configure in `.vscode/settings.json` or `~/.config/Code/User/settings.json`:
 }
 ```
 
-#### With Auto-Approval
+---
 
-```json
-{
-  "mcp.servers": {
-    "ddg-search": {
-      "url": "http://host-ip:8020/mcp",
-      "transport": "http",
-      "autoApprove": [
-        "web-search",
-        "felo-search",
-        "fetch-url",
-        "url-metadata"
-      ]
-    }
-  }
-}
+### Claude Desktop App/Claude Code
+
+**Configuration:**
+### **With API_KEY**
+```
+claude mcp add-json github '{"type":"http","url":"http://localhost:8045/mcp","headers":{"Authorization":"Bearer <YOUR_API_KEY>"}}'
+```
+### **Without API_KEY**
+```
+claude mcp add-json github '{"type":"http","url":"http://localhost:8045/mcp"}'
 ```
 
-### Claude Desktop App
-
-#### Configuration Locations
-
-| Platform | Configuration Path |
-|:---------|:-------------------|
-| **Linux** | `~/.config/Claude/claude_desktop_config.json` |
-| **macOS** | `~/Library/Application Support/Claude/claude_desktop_config.json` |
-| **Windows** | `%APPDATA%\Claude\claude_desktop_config.json` |
-
-#### HTTP Configuration
-
-```json
-{
-  "mcpServers": {
-    "ddg-search": {
-      "transport": "http",
-      "url": "http://localhost:8020/mcp"
-    }
-  }
-}
-```
-
-#### SSE Configuration
-
-```json
-{
-  "mcpServers": {
-    "ddg-search": {
-      "transport": "sse",
-      "url": "http://localhost:8020/sse"
-    }
-  }
-}
-```
-
-> 💡 **Tip:** Replace `localhost` with your server's IP address for remote access.
-
-### Claude CLI
-
-Configure in `~/.config/claude-cli/config.json`:
-
-```json
-{
-  "mcpServers": {
-    "ddg-search": {
-      "transport": "http",
-      "url": "http://host-ip:8020/mcp"
-    }
-  }
-}
-```
+---
 
 ### Codex CLI
 
@@ -389,13 +274,15 @@ Configure in `~/.codex/config.json`:
 ```json
 {
   "mcpServers": {
-    "ddg-search": {
+    "duckduckgo": {
       "transport": "http",
       "url": "http://host-ip:8020/mcp"
     }
   }
 }
 ```
+
+---
 
 ### Codeium (Windsurf)
 
@@ -404,7 +291,7 @@ Configure in `.codeium/mcp_settings.json`:
 ```json
 {
   "mcpServers": {
-    "ddg-search": {
+    "duckduckgo": {
       "transport": "http",
       "url": "http://host-ip:8020/mcp"
     }
@@ -412,14 +299,16 @@ Configure in `.codeium/mcp_settings.json`:
 }
 ```
 
+---
+
 ### Cursor
 
-Configure in `~/.cursor/mcp.json` or via **Settings → Features → MCP Servers**:
+Configure in `~/.cursor/mcp.json`:
 
 ```json
 {
   "mcpServers": {
-    "ddg-search": {
+    "duckduckgo": {
       "transport": "http",
       "url": "http://host-ip:8020/mcp"
     }
@@ -429,147 +318,69 @@ Configure in `~/.cursor/mcp.json` or via **Settings → Features → MCP Servers
 
 ---
 
-## Available Tools
+### Testing Configuration
 
-The DuckDuckGo Search MCP Server provides four powerful tools for web search and content extraction:
+Verify with [MCP Inspector](https://github.com/modelcontextprotocol/inspector):
 
-### 🔍 Web Search Tool
-
-**Tool Name:** `web-search`
-
-Search the web using DuckDuckGo with customizable result limits and pagination.
-
-**Parameters:**
-- `query` (string, **required**): The search query
-- `page` (integer, optional, default: 1): Page number for pagination
-- `numResults` (integer, optional, default: 10): Number of results to return (1-20)
-
-**Example Usage:**
-```
-Search the web for "climate change solutions"
-Find recent articles about "machine learning applications" page 2
-Search for "docker best practices" with 15 results
-```
-
----
-
-### 🧠 Felo AI Search Tool
-
-**Tool Name:** `felo-search`
-
-Get AI-powered responses and explanations using Felo AI's intelligent search engine.
-
-**Parameters:**
-- `query` (string, **required**): The search query or prompt
-- `stream` (boolean, optional, default: false): Whether to stream the response
-
-**Example Usage:**
-```
-Search Felo AI for "Explain quantum computing in simple terms"
-Ask Felo: "What are the benefits of containerization?"
-Get AI explanation for "difference between REST and GraphQL"
-```
-
----
-
-### 📄 Fetch URL Tool
-
-**Tool Name:** `fetch-url`
-
-Extract and process content from any URL with smart filtering and customizable options.
-
-**Parameters:**
-- `url` (string, **required**): The URL to fetch
-- `maxLength` (integer, optional, default: 10000): Maximum content length in characters
-- `extractMainContent` (boolean, optional, default: true): Extract only main content area
-- `includeLinks` (boolean, optional, default: true): Include link text in output
-- `includeImages` (boolean, optional, default: true): Include image alt text
-- `excludeTags` (array, optional): HTML tags to exclude (e.g., `["script", "style"]`)
-
-**Example Usage:**
-```
-Fetch the content from "https://example.com/article"
-Get main content from "https://blog.example.com" without images
-Extract text from "https://news.site.com" excluding navigation
-```
-
----
-
-### 📊 URL Metadata Tool
-
-**Tool Name:** `url-metadata`
-
-Extract structured metadata from any URL including Open Graph, Twitter Cards, and standard meta tags.
-
-**Parameters:**
-- `url` (string, **required**): The URL to extract metadata from
-
-**Example Usage:**
-```
-Get metadata for "https://example.com"
-Extract title and description from "https://blog.example.com/post"
-Retrieve Open Graph data from "https://news.site.com/article"
+```bash
+npm install -g @modelcontextprotocol/inspector
+mcp-inspector http://host-ip:8020/mcp
 ```
 
 ---
 
 ## Network Configuration
 
-### Standard Bridge Network
+### Comparison
 
-Default networking mode for simple, isolated deployments:
+| Network Mode | Complexity | Performance | Use Case |
+|:-------------|:----------:|:-----------:|:---------|
+| **Bridge** | ⭐ Easy | ⭐⭐⭐ Good | Default, isolated |
+| **Host** | ⭐⭐ Moderate | ⭐⭐⭐⭐ Excellent | Direct host access |
+| **MACVLAN** | ⭐⭐⭐ Advanced | ⭐⭐⭐⭐ Excellent | Dedicated IP |
+
+---
+
+### Bridge Network (Default)
 
 ```yaml
 services:
   duckduckgo-mcp:
     image: mekayelanik/duckduckgo-mcp:stable
-    container_name: duckduckgo-mcp
-    restart: unless-stopped
     ports:
       - "8020:8020"
-    environment:
-      - PORT=8020
 ```
 
-**Access:** `http://localhost:8020/mcp` or `http://host-ip:8020/mcp`
+**Benefits:** Container isolation, easy setup, works everywhere
+**Access:** `http://localhost:8020/mcp`
 
-#### Benefits
-- ✅ Container isolation from host network
-- ✅ Easy to configure and manage
-- ✅ Works across all platforms
+---
 
-### Host Network
-
-Use the host's network stack directly for maximum performance:
+### Host Network (Linux Only)
 
 ```yaml
 services:
   duckduckgo-mcp:
     image: mekayelanik/duckduckgo-mcp:stable
     network_mode: host
-    environment:
-      - PORT=8020
 ```
 
+**Benefits:** Maximum performance, no NAT overhead, no port mapping needed
+**Considerations:** Linux only, shares host network namespace
 **Access:** `http://localhost:8020/mcp`
 
-#### Benefits
-- ✅ Maximum performance - no NAT overhead
-- ✅ No port mapping needed
-- ⚠️ Linux only - not available on Docker Desktop
+---
 
 ### MACVLAN Network (Advanced)
-
-For dedicated IP addresses on your LAN:
 
 ```yaml
 services:
   duckduckgo-mcp:
     image: mekayelanik/duckduckgo-mcp:stable
-    mac_address: "AB:BC:CD:DE:EF:02"
+    mac_address: "AB:BC:CD:DE:EF:01"
     networks:
       macvlan-net:
-        ipv4_address: 192.168.1.101
+        ipv4_address: 192.168.1.100
 
 networks:
   macvlan-net:
@@ -582,45 +393,39 @@ networks:
           gateway: 192.168.1.1
 ```
 
-**Access:** `http://192.168.1.101:8020/mcp`
+**Benefits:** Dedicated IP, direct LAN access
+**Considerations:** Linux only, requires additional setup
+**Access:** `http://192.168.1.100:8020/mcp`
 
 ---
 
 ## Updating
 
-### Docker Compose Method
+### Docker Compose
 
 ```bash
-# Pull latest images
 docker compose pull
-
-# Recreate containers with new images
 docker compose up -d
-
-# Remove old images
 docker image prune -f
 ```
 
-### Docker CLI Method
+### Docker CLI
 
 ```bash
-# Pull the latest image
 docker pull mekayelanik/duckduckgo-mcp:stable
-
-# Stop and remove the old container
-docker stop duckduckgo-mcp
-docker rm duckduckgo-mcp
-
-# Start new container (use your original docker run command)
-docker run -d \
-  --name=duckduckgo-mcp \
-  --restart=unless-stopped \
-  -p 8020:8020 \
-  -e PORT=8020 \
-  mekayelanik/duckduckgo-mcp:stable
-
-# Clean up old images
+docker stop duckduckgo-mcp && docker rm duckduckgo-mcp
+# Run your original docker run command
 docker image prune -f
+```
+
+### One-Time Update with Watchtower
+
+```bash
+docker run --rm \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower \
+  --run-once \
+  duckduckgo-mcp
 ```
 
 ---
@@ -629,155 +434,142 @@ docker image prune -f
 
 ### Pre-Flight Checklist
 
-Before reporting an issue, please verify:
+- ✅ Docker Engine 23.0+
+- ✅ Port 8020 available
+- ✅ Sufficient startup time (ARM devices)
+- ✅ Latest stable image
+- ✅ Correct configuration
 
-- ✅ Docker Engine is version 23.0 or higher
-- ✅ Port 8020 is not in use by another service
-- ✅ Container has been given sufficient time to start
-- ✅ Configuration follows the examples provided
-- ✅ Latest stable image tag is being used
-
-### Common Issues & Solutions
+### Common Issues
 
 #### Container Won't Start
 
 ```bash
 # Check Docker version
-docker --version  # Should be 23.0+
+docker --version
 
 # Verify port availability
-sudo lsof -i :8020
+sudo netstat -tulpn | grep 8020
 
-# Check container logs
+# Check logs
 docker logs duckduckgo-mcp
-
-# Verify image integrity
-docker pull mekayelanik/duckduckgo-mcp:stable
 ```
 
-#### Permission Denied Errors
+#### Permission Errors
 
 ```bash
-# Get your user/group IDs
+# Get your IDs
 id $USER
 
-# Update configuration
-environment:
-  - PUID=1000  # Your UID
-  - PGID=1000  # Your GID
+# Update configuration with correct PUID/PGID
+# Fix volume permissions if needed
+sudo chown -R 1000:1000 /path/to/volume
 ```
 
 #### Client Cannot Connect
 
 ```bash
-# Test local connectivity
+# Test connectivity
 curl http://localhost:8020/mcp
+curl http://host-ip:8020/mcp
+curl -k https://localhost:8020/mcp
+curl -k https://host-ip:8020/mcp
 
-# Test health endpoint
-curl http://localhost:8020/healthz
-
-# Check firewall rules
+# Check firewall
 sudo ufw status
 
-# Verify container networking
+# Verify container
 docker inspect duckduckgo-mcp | grep IPAddress
 ```
 
-#### CORS Errors
+#### Slow ARM Performance
 
-```yaml
-# For development - allow all origins
-environment:
-  - CORS=*
+- Wait 30-60 seconds after start
+- Monitor: `docker logs -f duckduckgo-mcp`
+- Check resources: `docker stats duckduckgo-mcp`
+- Use faster storage (SSD vs SD card)
 
-# For production - specify exact origins
-environment:
-  - CORS=https://yourdomain.com
-```
+### Debug Information
 
-#### Search Results Not Returning
+When reporting issues, include:
 
 ```bash
-# Check internet access
-docker exec duckduckgo-mcp ping -c 3 8.8.8.8
+# System info
+docker --version && uname -a
 
-# Check DNS resolution
-docker exec duckduckgo-mcp nslookup duckduckgo.com
+# Container logs
+docker logs duckduckgo-mcp --tail 200 > logs.txt
 
-# Review logs
-docker logs duckduckgo-mcp --tail 50
-
-# Restart container
-docker restart duckduckgo-mcp
+# Container config
+docker inspect duckduckgo-mcp > inspect.json
 ```
 
 ---
 
 ## Additional Resources
 
-### Documentation & Guides
-
-- 📚 [NPM Package: @oevortex/ddg_search](https://www.npmjs.com/package/@oevortex/ddg_search)
-- 📦 [GitHub Repository](https://github.com/OEvortex/ddg_search)
-- 🎥 [YouTube Channel: @OEvortex](https://youtube.com/@OEvortex)
-- 🔧 [MCP Inspector Tool](https://github.com/modelcontextprotocol/inspector)
-- 🌟 [Glama AI MCP Server Registry](https://glama.ai/mcp/servers/@OEvortex/ddg_search)
+### Documentation
+- 📚 [DuckDuckGo Official Docs](https://github.com/oevortex/ddg_search)
+- 📦 [NPM Package](https://www.npmjs.com/package/@oevortex/ddg_search)
+- 🔧 [MCP Inspector](https://github.com/modelcontextprotocol/inspector)
 
 ### Docker Resources
-
 - 🐳 [Docker Compose Best Practices](https://docs.docker.com/compose/production/)
-- 🌐 [Docker Networking Overview](https://docs.docker.com/network/)
-- 🛡️ [Docker Security Best Practices](https://docs.docker.com/engine/security/)
+- 🌐 [Docker Networking](https://docs.docker.com/network/)
+- 🛡️ [Docker Security](https://docs.docker.com/engine/security/)
+
+### Monitoring
+- 📊 [Diun - Update Notifier](https://crazymax.dev/diun/)
+- ⚡ [Watchtower](https://containrrr.dev/watchtower/)
 
 ---
 
-## Support & Contributing
+## 😎 Buy Me a Coffee ☕︎
+**Your support encourages me to keep creating/supporting my open-source projects.** If you found value in this project, you can buy me a coffee to keep me inspired.
+
+<p align="center">
+  <a href="https://07mekayel07.gumroad.com/coffee" target="_blank">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="217" height="60">
+  </a>
+</p>
+
+## Support & License
 
 ### Getting Help
 
-#### Docker Image Issues
+**Docker Image Issues:**
+- GitHub: [duckduckgo-mcp-docker/issues](https://github.com/MekayelAnik/duckduckgo-mcp/issues)
 
-For issues specific to this Docker image:
-- **GitHub Issues:** [duckduckgo-mcp-docker/issues](https://github.com/MekayelAnik/duckduckgo-mcp-docker/issues)
-- **Discussions:** [duckduckgo-mcp-docker/discussions](https://github.com/MekayelAnik/duckduckgo-mcp-docker/discussions)
-
-#### Package Issues
-
-For DuckDuckGo Search MCP functionality:
-- **GitHub:** [OEvortex/ddg_search/issues](https://github.com/OEvortex/ddg_search/issues)
-- **YouTube:** [@OEvortex](https://youtube.com/@OEvortex)
+**DuckDuckGo MCP Issues:**
+- GitHub: [oevortex/ddg_search/issues](https://github.com/oevortex/ddg_search/issues)
+- Website: [duckduckgo.com](https://duckduckgo.com/)
 
 ### Contributing
 
-We welcome contributions! Here's how you can help:
+We welcome contributions:
+1. Report bugs via GitHub Issues
+2. Suggest features
+3. Improve documentation
+4. Test beta releases
 
-1. **Report Bugs:** Use GitHub Issues with detailed information
-2. **Suggest Features:** Open a discussion or feature request
-3. **Improve Documentation:** Submit PRs for documentation updates
-4. **Test Beta Releases:** Help test new features before stable release
+### License
 
----
+GPL License. See [LICENSE](https://raw.githubusercontent.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE) for details.
 
-## License
-
-This Docker image is provided under the GPLv3.0. See [LICENSE](https://raw.githubusercontent.com/MekayelAnik/duckduckgo-mcp-docker/refs/heads/main/LICENSE) file for details.
-
-The ddg_search MCP NPM package ([@oevortex/ddg_search](https://www.npmjs.com/package/@oevortex/ddg_search)) is licensed under Apache License 2.0.
+DuckDuckGo MCP server has its own license - see [Main NPM repo](https://github.com/oevortex/ddg_search).
 
 ---
 
-## Disclaimer
+### Major Changes
 
-This is an unofficial Docker image for [@oevortex/ddg_search](https://www.npmjs.com/package/@oevortex/ddg_search). Not affiliated with DuckDuckGo, Felo AI, or Anthropic.
+<ul>
+  <li><strong>Initial Release:</strong> Full CI/CD pipeline with HAProxy, HTTPS/TLS, QUIC/HTTP3, API key auth</li>
+</ul>
 
-**Web Scraping Notice:** This tool performs web scraping on public search results. Users are responsible for complying with website terms of service, robots.txt directives, rate limiting, ethical scraping practices, and local laws.
-
-**Privacy:** This Docker image does not collect, store, or transmit your search queries or personal data. All searches are performed directly against public search engines.
-
----
+<p></p>
 
 <div align="center">
 
-[⬆️ Back to Top](#duckduckgo-search-mcp-server)
+[⬆ Back to Top](#duckduckgo-mcp-server)
 
 </div>
