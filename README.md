@@ -1,4 +1,19 @@
+<p align="center"><img src="https://duckduckgo.com/assets/logo_header.v109.svg" alt="DuckDuckGo Logo" width="200"></p>
+
 # DuckDuckGo Search MCP Server
+
+<p align="center">
+  <a href="https://hub.docker.com/r/mekayelanik/duckduckgo-mcp"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/mekayelanik/duckduckgo-mcp?style=flat-square&logo=docker"></a>
+  <a href="https://hub.docker.com/r/mekayelanik/duckduckgo-mcp"><img alt="Docker Stars" src="https://img.shields.io/docker/stars/mekayelanik/duckduckgo-mcp?style=flat-square&logo=docker"></a>
+  <a href="https://github.com/mekayelanik/duckduckgo-mcp-docker/pkgs/container/duckduckgo-mcp"><img alt="GHCR" src="https://img.shields.io/badge/GHCR-ghcr.io%2Fmekayelanik%2Fduckduckgo-mcp-blue?style=flat-square&logo=github"></a>
+  <a href="https://github.com/mekayelanik/duckduckgo-mcp-docker/blob/main/LICENSE"><img alt="License: GPL-3.0" src="https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square"></a>
+  <a href="https://hub.docker.com/r/mekayelanik/duckduckgo-mcp"><img alt="Platforms" src="https://img.shields.io/badge/Platforms-amd64%20%7C%20arm64-lightgrey?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/duckduckgo-mcp-docker/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/MekayelAnik/duckduckgo-mcp-docker?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/duckduckgo-mcp-docker/forks"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/MekayelAnik/duckduckgo-mcp-docker?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/duckduckgo-mcp-docker/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/MekayelAnik/duckduckgo-mcp-docker?style=flat-square"></a>
+  <a href="https://github.com/MekayelAnik/duckduckgo-mcp-docker/commits/main"><img alt="Last Commit" src="https://img.shields.io/github/last-commit/MekayelAnik/duckduckgo-mcp-docker?style=flat-square"></a>
+</p>
+
 ### Multi-Architecture Docker Image for Privacy-First Web Search
 
 <div align="left">
