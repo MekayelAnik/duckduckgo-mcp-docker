@@ -76,7 +76,7 @@ DuckDuckGo Search MCP Server provides privacy-first web search capabilities thro
 |:----|:---------:|:------------|:---------|
 | `stable` | ⭐⭐⭐ | Most stable release | **Recommended for production** |
 | `latest` | ⭐⭐⭐ | Latest stable release | Stay current with stable features |
-| `1.3.0` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
+| `1.4.0` | ⭐⭐⭐ | Specific version | Version pinning for consistency |
 | `beta` | ⚠️ | Beta releases | **Testing only** |
 
 ### System Requirements
